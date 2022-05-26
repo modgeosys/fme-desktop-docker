@@ -35,6 +35,7 @@ ENV FME_DESKTOP_DEB_FILE_NAME "fme-desktop-2021_2021.${FME_DESKTOP_BUILD_VERSION
 ENV FME_DESKTOP_DEB_FILE_PATH "./${FME_DESKTOP_DEB_FILE_NAME}"
 
 # Install FME Desktop.
+# Alternative: curl https://downloads.safe.com/fme/2021/fme-desktop-2021_2021.2.5.21816~ubuntu.20.04_amd64.deb
 COPY ${FME_DESKTOP_DEB_FILE_PATH} /root
 RUN dpkg -i /root/${FME_DESKTOP_DEB_FILE_NAME} && rm -f /root/${FME_DESKTOP_DEB_FILE_NAME} 
 
