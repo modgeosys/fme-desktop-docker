@@ -1,0 +1,23 @@
+services:
+  app:
+    image: fme-workbench-2021:21816
+    build:
+      context: .
+      args:
+        - TIME_ZONE_AREA=Americas
+        - TIME_ZONE_LOCATION=Denver
+        - USER=kweller
+        - FME_DESKTOP_BUILD_VERSION=2.5.21816
+    environment:
+      - DISPLAY=${DISPLAY}
+    logging:
+      driver: journald
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - opt:/opt/fme-desktop-2021
+      - type: bind
+        source: /home/kweller
+        target: /home/kweller
+    network_mode: host
+volumes:
+  opt:
