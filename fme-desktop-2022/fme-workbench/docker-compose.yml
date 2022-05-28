@@ -7,7 +7,7 @@ services:
       args:
         - TIME_ZONE_AREA=Americas
         - TIME_ZONE_LOCATION=Denver
-        - USER=kweller
+        - USER=${USER}
         - FME_DESKTOP_BUILD_VERSION=0.0.2.22343
     environment:
       - DISPLAY=${DISPLAY}
