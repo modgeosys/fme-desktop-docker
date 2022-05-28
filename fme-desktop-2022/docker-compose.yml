@@ -16,6 +16,9 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - opt:/opt/fme-desktop-2022
       - type: bind
+        source: /opt/fme-desktop-docker/packages
+        target: /root/packages
+      - type: bind
         source: /home/kweller
         target: /home/kweller
     network_mode: host

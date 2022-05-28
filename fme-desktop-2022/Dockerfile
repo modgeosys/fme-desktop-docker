@@ -33,12 +33,13 @@ ENV DEBCONF_NONINTERACTIVE_SEEN default
 # Configurable environment variable values.
 ENV HOME_PATH "/home/${USER}"
 ENV FME_DESKTOP_DEB_FILE_NAME "fme-desktop-2022_2022.${FME_DESKTOP_BUILD_VERSION}_ubuntu.20.04_amd64.deb"
-ENV FME_DESKTOP_DEB_FILE_PATH "./${FME_DESKTOP_DEB_FILE_NAME}"
+ENV FME_DESKTOP_DEB_FILE_PATH "/root/packages/${FME_DESKTOP_DEB_FILE_NAME}"
 
 # Install FME Desktop.
-# Alternative: curl https://downloads.safe.com/fme/2022/fme-desktop-2022_2022.0.0.2.22343~ubuntu.20.04_amd64.deb
-COPY ${FME_DESKTOP_DEB_FILE_PATH} /root
-RUN dpkg -i /root/${FME_DESKTOP_DEB_FILE_NAME} && rm -f /root/${FME_DESKTOP_DEB_FILE_NAME} 
+#RUN mkdir -p /root/packages
+RUN if test ! -e ${FME_DESKTOP_DEB_FILE_PATH}; curl -v --output-dir /root/packages -O https://downloads.safe.com/fme/2022/${FME_DESKTOP_DEB_FILE_NAME}; fi
+#COPY ${FME_DESKTOP_DEB_FILE_PATH} /root
+RUN dpkg -i {FME_DESKTOP_DEB_FILE_PATH} # && rm -f ${FME_DESKTOP_DEB_FILE_PATH}
 
 # Setup runtime user account.
 RUN groupadd -g 1000 ${USER} && useradd -mru 1000 -g ${USER} ${USER}
