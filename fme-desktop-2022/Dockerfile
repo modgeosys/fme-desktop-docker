@@ -36,7 +36,9 @@ ENV FME_DESKTOP_DEB_FILE_NAME "fme-desktop-2022_2022.${FME_DESKTOP_BUILD_VERSION
 
 # Install FME Desktop.
 WORKDIR /root
-RUN curl -O https://downloads.safe.com/fme/2022/${FME_DESKTOP_DEB_FILE_NAME} && dpkg -i ${FME_DESKTOP_DEB_FILE_NAME}
+RUN curl -O https://downloads.safe.com/fme/2022/${FME_DESKTOP_DEB_FILE_NAME} && \
+    dpkg -i ${FME_DESKTOP_DEB_FILE_NAME} && \
+    rm -f ${FME_DESKTOP_DEB_FILE_NAME}
 
 # Setup runtime user account.
 RUN groupadd -g 1000 ${USER} && useradd -mru 1000 -g ${USER} ${USER}
