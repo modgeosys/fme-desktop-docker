@@ -26,25 +26,22 @@ RUN truncate -s0 /tmp/preseed.cfg && \
     libxcb-xfixes0 libxcb-xinput0 libxcb-xkb1 libxcomposite1 libxdamage1 libxfixes3 libxkbcommon-x11-0 \
     libxkbcommon0 libxkbfile1 libxrandr2 libxshmfence1 libxt6 libxtst6 uuid-runtime python3-pip python3-pil \
     python3-certifi python3-cryptography python3-lxml python3-matplotlib python3-numpy python3-bs4 gpsbabel \
-    openjdk-11-jre-headless tcllib graphviz
+    openjdk-11-jre-headless tcllib graphviz curl
 ENV DEBIAN_FRONTEND default
 ENV DEBCONF_NONINTERACTIVE_SEEN default
 
 # Configurable environment variable values.
 ENV HOME_PATH "/home/${USER}"
-ENV FME_DESKTOP_DEB_FILE_NAME "fme-desktop-2022_2022.${FME_DESKTOP_BUILD_VERSION}_ubuntu.20.04_amd64.deb"
-ENV FME_DESKTOP_DEB_FILE_PATH "/root/packages/${FME_DESKTOP_DEB_FILE_NAME}"
+ENV FME_DESKTOP_DEB_FILE_NAME "fme-desktop-2022_2022.${FME_DESKTOP_BUILD_VERSION}~ubuntu.20.04_amd64.deb"
 
 # Install FME Desktop.
-#RUN mkdir -p /root/packages
-RUN if test ! -e ${FME_DESKTOP_DEB_FILE_PATH}; curl -v --output-dir /root/packages -O https://downloads.safe.com/fme/2022/${FME_DESKTOP_DEB_FILE_NAME}; fi
-#COPY ${FME_DESKTOP_DEB_FILE_PATH} /root
-RUN dpkg -i {FME_DESKTOP_DEB_FILE_PATH} # && rm -f ${FME_DESKTOP_DEB_FILE_PATH}
+WORKDIR /root
+RUN curl -O https://downloads.safe.com/fme/2022/${FME_DESKTOP_DEB_FILE_NAME} && dpkg -i ${FME_DESKTOP_DEB_FILE_NAME}
 
 # Setup runtime user account.
 RUN groupadd -g 1000 ${USER} && useradd -mru 1000 -g ${USER} ${USER}
 USER ${USER}
 WORKDIR ${HOME_PATH}
 
-# Start FME Workbench.
+## Start FME Workbench.
 CMD ["/bin/sh", "-c", "/opt/fme-desktop-2022/fmeworkbench"]
