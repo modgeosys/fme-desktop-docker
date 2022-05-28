@@ -18,7 +18,7 @@ environment configuration.  You might need to install **XQuartz**,
 among other adjustments.  Feel free to fork this repository if you
 need to make changes to support other desktop operating
 environments.  If you can do so without compromising the integrity
-of the Linux-hosted deaktop enfvironment, please make a pull
+of the Linux-hosted deaktop environment, please make a pull
 request and I will be happy to review your suggested improvements
 for incorporation into the base repository.
 
