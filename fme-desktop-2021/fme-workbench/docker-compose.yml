@@ -1,6 +1,7 @@
 services:
   app:
     image: fme-workbench-2021:21816
+    container_name: fme-workbench-2021
     build:
       context: .
       args:
@@ -14,10 +15,10 @@ services:
       driver: journald
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
-      - opt:/opt/fme-desktop-2021
+      - opt_2021:/opt/fme-desktop-2021
       - type: bind
         source: /home/${USER}
         target: /home/${USER}
     network_mode: host
 volumes:
-  opt:
+  opt_2021:

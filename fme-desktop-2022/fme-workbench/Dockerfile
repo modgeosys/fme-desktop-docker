@@ -16,17 +16,18 @@ RUN truncate -s0 /tmp/preseed.cfg && \
     rm -f /etc/timezone /etc/localtime && \
     apt-get update && \
     apt-get install -y tzdata libc-bin desktop-file-utils hicolor-icon-theme shared-mime-info libpython3-dev \
-    libboost-chrono1.67.0 libboost-filesystem1.67.0 libboost-iostreams1.67.0 libboost-locale1.67.0 \
-    libboost-regex1.67.0 libboost-system1.67.0 libboost-thread1.67.0 \
-    libcfitsio8 libdbus-1-3 libde265-0 libegl1 libfontconfig1 libfreetype6 libgl1 libglx0 libgomp1 \
-    libgtk-3-0 libharfbuzz0b libice6 libjpeg8 libltdl7 libmpfr6 libnghttp2-14 libnspr4 libnss3 libodbc1 \
-    libopengl0 libpango-1.0-0 libpcre2-16-0 libpng16-16 libpq5 libsm6 libssh2-1 libtcl8.6 libtcmalloc-minimal4 \
-    libtiff5 libwebp6 libwebpdemux2 libwebpmux3 libx11-xcb1 libxcb-glx0 libxcb-icccm4 libxcb-image0 \
-    libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-render0 libxcb-shape0 libxcb-shm0 libxcb-sync1 \
-    libxcb-xfixes0 libxcb-xinput0 libxcb-xkb1 libxcomposite1 libxdamage1 libxfixes3 libxkbcommon-x11-0 \
-    libxkbcommon0 libxkbfile1 libxrandr2 libxshmfence1 libxt6 libxtst6 uuid-runtime python3-pip python3-pil \
-    python3-certifi python3-cryptography python3-lxml python3-matplotlib python3-numpy python3-bs4 gpsbabel \
-    openjdk-11-jre-headless tcllib graphviz curl
+                       libboost-chrono1.67.0 libboost-filesystem1.67.0 libboost-iostreams1.67.0 libboost-locale1.67.0 \
+                       libboost-regex1.67.0 libboost-system1.67.0 libboost-thread1.67.0 libcfitsio8 libdbus-1-3 \
+                       libde265-0 libegl1 libfontconfig1 libfreetype6 libgl1 libglx0 libgomp1 libgtk-3-0 libharfbuzz0b \
+                       libice6 libjpeg8 libltdl7 libmpfr6 libnghttp2-14 libnspr4 libnss3 libodbc1 libopengl0 \
+                       libpango-1.0-0 libpcre2-16-0 libpng16-16 libpq5 libsm6 libssh2-1 libtcl8.6 libtcmalloc-minimal4 \
+                       libtiff5 libwebp6 libwebpdemux2 libwebpmux3 libx11-xcb1 libxcb-glx0 libxcb-icccm4 libxcb-image0 \
+                       libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-render0 libxcb-shape0 libxcb-shm0 \
+                       libxcb-sync1 libxcb-xfixes0 libxcb-xinput0 libxcb-xkb1 libxcomposite1 libxdamage1 libxfixes3 \
+                       libxkbcommon-x11-0 libxkbcommon0 libxkbfile1 libxrandr2 libxshmfence1 libxt6 libxtst6 \
+                       uuid-runtime python3-pip python3-pil python3-certifi python3-cryptography python3-lxml \
+                       python3-matplotlib python3-numpy python3-bs4 gpsbabel openjdk-11-jre-headless tcllib graphviz \
+                       curl
 ENV DEBIAN_FRONTEND readline
 ENV DEBCONF_NONINTERACTIVE_SEEN false
 
