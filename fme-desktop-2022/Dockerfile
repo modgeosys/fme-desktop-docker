@@ -27,8 +27,8 @@ RUN truncate -s0 /tmp/preseed.cfg && \
     libxkbcommon0 libxkbfile1 libxrandr2 libxshmfence1 libxt6 libxtst6 uuid-runtime python3-pip python3-pil \
     python3-certifi python3-cryptography python3-lxml python3-matplotlib python3-numpy python3-bs4 gpsbabel \
     openjdk-11-jre-headless tcllib graphviz curl
-ENV DEBIAN_FRONTEND default
-ENV DEBCONF_NONINTERACTIVE_SEEN default
+ENV DEBIAN_FRONTEND readline
+ENV DEBCONF_NONINTERACTIVE_SEEN false
 
 # Configurable environment variable values.
 ENV HOME_PATH "/home/${USER}"
@@ -45,5 +45,5 @@ RUN groupadd -g 1000 ${USER} && useradd -mru 1000 -g ${USER} ${USER}
 USER ${USER}
 WORKDIR ${HOME_PATH}
 
-## Start FME Workbench.
+# Start FME Workbench.
 CMD ["/bin/sh", "-c", "/opt/fme-desktop-2022/fmeworkbench"]

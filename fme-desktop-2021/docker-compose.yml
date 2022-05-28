@@ -16,8 +16,8 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - opt:/opt/fme-desktop-2021
       - type: bind
-        source: /home/kweller
-        target: /home/kweller
+        source: /home/${USER}
+        target: /home/${USER}
     network_mode: host
 volumes:
   opt:
