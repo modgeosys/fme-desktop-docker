@@ -17,8 +17,8 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - opt_2021:/opt/fme-desktop-2021
       - type: bind
-        source: /home/${USER}
-        target: /home/${USER}
+        source: ${HOME}
+        target: ${HOME}
     network_mode: host
 volumes:
   opt_2021:

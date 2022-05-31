@@ -30,7 +30,6 @@ ENV DEBIAN_FRONTEND readline
 ENV DEBCONF_NONINTERACTIVE_SEEN false
 
 # Configurable environment variable values.
-ENV HOME_PATH "/home/${USER}"
 ENV FME_DESKTOP_DEB_FILE_NAME "fme-desktop-2021_2021.${FME_DESKTOP_BUILD_VERSION}~ubuntu.20.04_amd64.deb"
 
 # Install FME Desktop.
@@ -42,7 +41,7 @@ RUN curl -O https://downloads.safe.com/fme/2021/${FME_DESKTOP_DEB_FILE_NAME} && 
 # Setup runtime user account.
 RUN groupadd -g 1000 ${USER} && useradd -mru 1000 -g ${USER} ${USER}
 USER ${USER}
-WORKDIR ${HOME_PATH}
+WORKDIR ${HOME}
 
 # Start FME Workbench.
 CMD ["/bin/sh", "-c", "/opt/fme-desktop-2021/fmeworkbench"]
