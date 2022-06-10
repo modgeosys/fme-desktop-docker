@@ -14,8 +14,8 @@ therein.  You can change this in the `docker-compose.yml` file if
 you wish.
 
 This solution will probably work for macOS with an appropriate
-environment configuration.  You will need to install **XQuartz**,
-and set/export your `DISPLAY` environment variable at a minimum.
+environment configuration.  At minimum, you will need to install
+**XQuartz**, and set/export your `DISPLAY` environment variable.
 Feel free to fork this repository if you need to make changes to
 support other desktop operating environments.  If you can do so
 without compromising the integrity of the Linux-hosted desktop
