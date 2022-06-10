@@ -3,8 +3,8 @@
 Provides `Dockerfile`s and `docker-compose.yml` files to
 automatically install specified versions of Safe Software's
 **FME Desktop** product into corresponding **Docker** containers
-on a Linux host running an X server.  When started, these
-containers will run *FME Workbench*, from which the
+on a Linux or other UNIX-like host running an X server.  When
+started, these containers will run *FME Workbench*, from which the
 **FME Data Inspector** and subordinate *FME Workbench* processes
 may be subsequently launched.
 
@@ -13,14 +13,15 @@ default, so you'll have full access to any workspaces or data
 therein.  You can change this in the `docker-compose.yml` file if
 you wish.
 
-This solution may work for macOS as well, with the correct
-environment configuration.  You might need to install **XQuartz**,
-among other adjustments.  Feel free to fork this repository if you
-need to make changes to support other desktop operating
-environments.  If you can do so without compromising the integrity
-of the Linux-hosted deaktop environment, please make a pull
-request and I will be happy to review your suggested improvements
-for incorporation into the base repository.
+This solution will probably work for macOS with an appropriate
+environment configuration.  You will need to install **XQuartz**,
+and set/export your `DISPLAY` environment variable at a minimum.
+Feel free to fork this repository if you need to make changes to
+support other desktop operating environments.  If you can do so
+without compromising the integrity of the Linux-hosted desktop
+environment, please make a pull request and I will be happy to
+review your suggested improvements for incorporation into the base
+repository.
 
 ## Installation and Usage
 1. Clone this repository somewhere:

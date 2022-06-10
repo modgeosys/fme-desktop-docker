@@ -4,6 +4,7 @@ FROM ubuntu:20.04
 ARG TIME_ZONE_AREA
 ARG TIME_ZONE_LOCATION
 ARG USER
+ARG HOME=${HOME}
 ARG FME_DESKTOP_BUILD_VERSION
 
 ## Preseed time zone data, update package index and install required packages.

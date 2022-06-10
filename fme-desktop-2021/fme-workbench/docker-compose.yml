@@ -8,6 +8,7 @@ services:
         - TIME_ZONE_AREA=Americas
         - TIME_ZONE_LOCATION=Denver
         - USER=${USER}
+        - HOME=${HOME}
         - FME_DESKTOP_BUILD_VERSION=2.5.21816
     environment:
       - DISPLAY=${DISPLAY}
