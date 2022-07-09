@@ -1,6 +1,6 @@
 services:
   app:
-    image: modgeosys/fme-workbench-2022:22343
+    image: modgeosys/fme-workbench-2022:22618
     container_name: fme-workbench-2022
     build:
       context: .
@@ -9,7 +9,7 @@ services:
         - TIME_ZONE_LOCATION=Denver
         - USER=${USER}
         - HOME=${HOME}
-        - FME_DESKTOP_BUILD_VERSION=0.0.2.22343
+        - FME_DESKTOP_BUILD_VERSION=1.22618
     environment:
       - DISPLAY=${DISPLAY}
     logging:

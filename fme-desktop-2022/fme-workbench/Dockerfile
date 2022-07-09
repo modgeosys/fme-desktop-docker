@@ -28,7 +28,7 @@ RUN truncate -s0 /tmp/preseed.cfg && \
                        libxkbcommon-x11-0 libxkbcommon0 libxkbfile1 libxrandr2 libxshmfence1 libxt6 libxtst6 \
                        uuid-runtime python3-pip python3-pil python3-certifi python3-cryptography python3-lxml \
                        python3-matplotlib python3-numpy python3-bs4 gpsbabel openjdk-11-jre-headless tcllib graphviz \
-                       curl
+                       curl libmariadb3 libtbb2
 ENV DEBIAN_FRONTEND readline
 ENV DEBCONF_NONINTERACTIVE_SEEN false
 
