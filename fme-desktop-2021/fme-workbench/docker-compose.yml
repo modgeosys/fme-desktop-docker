@@ -12,6 +12,10 @@ services:
         - FME_DESKTOP_BUILD_VERSION=2.6.21821
     environment:
       - DISPLAY=${DISPLAY}
+      - WORKING_DIRECTORY=${WORKING_DIRECTORY}
+      - COMMAND=${COMMAND}
+      - WORKSPACE=${WORKSPACE}
+      - PARAMETERS=${PARAMETERS}
     logging:
       driver: journald
     volumes:

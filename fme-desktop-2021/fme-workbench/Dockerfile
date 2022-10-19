@@ -45,4 +45,4 @@ USER ${USER}
 WORKDIR ${HOME}
 
 # Start FME Workbench.
-CMD ["/bin/sh", "-c", "/opt/fme-desktop-2021/fmeworkbench"]
+CMD ["/bin/sh", "-c", "cd ${WORKING_DIRECTORY}; /opt/fme-desktop-2021/${COMMAND} ${WORKSPACE} ${PARAMETERS}"]

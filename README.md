@@ -4,9 +4,7 @@ Provides `Dockerfile`s and `docker-compose.yml` files to
 automatically install specified versions of Safe Software's
 **FME Desktop** product into corresponding **Docker** containers
 on a Linux or other UNIX-like host running an X server.  When
-started, these containers will run *FME Workbench*, from which the
-**FME Data Inspector** and subordinate *FME Workbench* processes
-may be subsequently launched.
+started, these containers will run any **FME Desktop** application.
 
 This configuration mounts your home directory on your host by
 default, so you'll have full access to any workspaces or data
@@ -33,6 +31,11 @@ changes you'll most likely want to make are to the `TIME_ZONE_AREA`
 and `TIME_ZONE_LOCATION` arguments so they correspond to your
 location.
 4. Build the container image: `docker-compose build`
-5. Launch *FME Workbench*: `docker-compose up`
-6. License your installation in the usual manner.
-7. Enjoy!
+5. Launch **FME Workbench**: `WORKING_DIRECTORY=`*your_working_directory*` COMMAND=fmeworkbench docker-compose up`
+6. Launch **FME Quick Translator**: `WORKING_DIRECTORY=`*your_working_directory*` COMMAND=fmequicktranslator docker-compose up`
+7. Launch **FME Data Inspector**: `WORKING_DIRECTORY=`*your_working_directory*` COMMAND=fmedatainspector docker-compose up`
+8. Launch **FME Help**: `WORKING_DIRECTORY=`*your_working_directory*` COMMAND=fmehelpapp docker-compose up`
+9. Launch **FME Licensing Assistant**: `WORKING_DIRECTORY=`*your_working_directory*` COMMAND=fmelicensingassistant docker-compose up`
+10. Run an **FME** workspace: `WORKING_DIRECTORY=`*your_working_directory*` COMMAND=fme WORKSPACE=`*your_workspace_fmw*` PARAMETERS=`*your_workspace_parameters*` docker-compose up`
+11. License your installation in the usual manner.
+12. Enjoy!
