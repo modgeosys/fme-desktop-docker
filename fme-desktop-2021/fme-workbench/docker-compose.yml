@@ -1,6 +1,6 @@
 services:
   app:
-    image: modgeosys/fme-workbench-2021:21821
+    image: modgeosys/fme-workbench-2021:21821.1
     container_name: fme-workbench-2021
     build:
       context: .
