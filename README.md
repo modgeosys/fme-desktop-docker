@@ -39,3 +39,17 @@ location.
 10. Run an **FME** workspace: `WORKING_DIRECTORY=`*your_working_directory*` COMMAND=fme WORKSPACE=`*your_workspace_fmw*` PARAMETERS=`*your_workspace_parameters*` docker-compose up`
 11. License your installation in the usual manner.
 12. Enjoy!
+
+## Upgrading
+1. `cd `*your_fme-desktop-docker_git_repository_path*
+2. `git pull`
+3. Merge any `Dockerfile` and `docker-compose.yml` changes with your customizations.
+4. Change to the fme-workbench directory under the **FME Desktop**
+version you wish to install.
+5. `docker-compose down -v`
+6. Launch **FME Workbench**: `WORKING_DIRECTORY=`*your_working_directory*` COMMAND=fmeworkbench docker-compose up`
+7. Launch **FME Quick Translator**: `WORKING_DIRECTORY=`*your_working_directory*` COMMAND=fmequicktranslator docker-compose up`
+8. Launch **FME Data Inspector**: `WORKING_DIRECTORY=`*your_working_directory*` COMMAND=fmedatainspector docker-compose up`
+9. Launch **FME Help**: `WORKING_DIRECTORY=`*your_working_directory*` COMMAND=fmehelpapp docker-compose up`
+10. Launch **FME Licensing Assistant**: `WORKING_DIRECTORY=`*your_working_directory*` COMMAND=fmelicensingassistant docker-compose up`
+11. Run an **FME** workspace: `WORKING_DIRECTORY=`*your_working_directory*` COMMAND=fme WORKSPACE=`*your_workspace_fmw*` PARAMETERS=`*your_workspace_parameters*` docker-compose up`
